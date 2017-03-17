@@ -88,8 +88,9 @@ void send_client(double key)
 	char  string[30];
 	printf("enter last digit of ip address ");
 	scanf("%d", &d);
-	sprintf(string, "tcp://127.0.0.%d:4400\n",d);
-	zmq_connect(serSocket, string); zmq_msg_t reply;
+	sprintf(string, "tcp://127.0.0.%d:4400",d);
+	zmq_connect(serSocket, string); 
+	zmq_msg_t reply;
 	zmq_msg_init(&reply);
 	zmq_msg_recv(&reply, serSocket, 0);
 	size_t repSize = zmq_msg_size(&reply);
@@ -130,8 +131,8 @@ int main(int argc, char const *argv[])
     char  string[30];
 	printf("enter last digit of ip address ");
 	scanf("%d", &d);
-	sprintf(string, "tcp://127.0.0.%d:4400\n", d);
-	printf("%s", string);
+	sprintf(string, "tcp://127.0.0.%d:4400", d);
+	printf("%s\n", string);
 	void* context = zmq_ctx_new();
 	void* serverSocket = zmq_socket(context, ZMQ_REP);
 	zmq_bind(serverSocket, string);
@@ -159,7 +160,6 @@ int main(int argc, char const *argv[])
 			{
 				insert(md->key, &root);
 				printf("new client added\n");
-				printf("%lf", md->key);
 			}
 			zmq_msg_close(&mess);
 		switch (md->choise)

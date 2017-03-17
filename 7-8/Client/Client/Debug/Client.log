@@ -1,4 +1,4 @@
-﻿Build started 10.03.2017 19:50:23.
+﻿Build started 17.03.2017 20:23:57.
      1>Project "C:\Users\Антон\Desktop\7-8\Client\Client\Client.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Client.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
@@ -6,7 +6,6 @@
          main.cpp
      1>c:\users\антон\desktop\7-8\client\client\main.cpp(15): warning C4091: 'typedef ' : ignored on left of 'node' when no variable is declared
      1>c:\users\антон\desktop\7-8\client\client\main.cpp(21): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\антон\desktop\7-8\client\client\main.cpp(23): warning C4101: 'i' : unreferenced local variable
        Link:
          G:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Антон\Desktop\7-8\Client\Debug\Publish.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\libzmq-master\bin\Win32\Debug\v120\dynamic" /LIBPATH:"C:\Program Files (x86)\ZeroMQ 4.0.4\lib\\" "libzmq-v120-mt-gd-4_0_4.lib" libzmq.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Антон\Desktop\7-8\Client\Debug\Publish.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Антон\Desktop\7-8\Client\Debug\Publish.lib" /MACHINE:X86 Debug\main.obj
          Client.vcxproj -> C:\Users\Антон\Desktop\7-8\Client\Debug\Publish.exe
@@ -18,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.16
+Time Elapsed 00:00:00.75

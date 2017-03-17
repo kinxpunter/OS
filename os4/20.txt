@@ -1,0 +1,299 @@
+158063@betong:~$ cmp -l f1 f2
+     1 154  61
+     2 163  60
+     3  12  60
+     4 141  60
+     5 163  61
+     6 144  61
+     7 141  60
+     8 163  61
+     9 144  40
+    10  12 154
+    11 161 163
+    12 167  12
+    13 145 141
+    14 162 163
+    15 164 144
+    16 171 141
+    17  12 163
+cmp: EOF on f1
+158063@betong:~$ comm f1 f2
+	10001101 ls
+	asdasd
+ls
+asdasd
+		qwerty
+158063@betong:~$ wc f1
+       3       3      17 f1
+158063@betong:~$ wc f2
+       3       4      26 f2
+158063@betong:~$ diff f1 f2
+1c1
+< ls
+---
+> 10001101 ls
+158063@betong:~$ od f1
+0000000    071554  060412  062163  071541  005144  073561  071145  074564
+0000020    000012                                                        
+0000021
+158063@betong:~$ sort  f1 f2
+10001101 ls
+asdasd
+asdasd
+ls
+qwerty
+qwerty
+158063@betong:~$ diff f1 f2
+1,6d0
+< 
+< 
+<  q w e r t yls
+< 125 789 1001
+< 45664223 7897 4 5 6 
+< asdasd
+7a2
+> asdasd
+8a4,7
+> 125 789 1001
+> 45664223 7897 4 5 6 
+>  q w e r t yls
+> 
+10d8
+< 123456
+158063@betong:~$ sort -M f1 f2
+
+
+
+
+
+ q w e r t yls
+ q w e r t yls
+123456
+125 789 1001
+125 789 1001
+45664223 7897 4 5 6 
+45664223 7897 4 5 6 
+asdasd
+asdasd
+ls ew
+ls ew
+qwerty
+qwerty
+158063@betong:~$ sort -u f1 f2
+
+ q w e r t yls
+123456
+125 789 1001
+45664223 7897 4 5 6 
+asdasd
+ls ew
+qwerty
+158063@betong:~$ sort -m f1 f2
+
+
+ q w e r t yls
+125 789 1001
+45664223 7897 4 5 6 
+asdasd
+ls ew
+ls ew
+asdasd
+qwerty
+
+123456
+qwerty
+125 789 1001
+45664223 7897 4 5 6 
+ q w e r t yls
+
+
+158063@betong:~$ sort -o qwerty f1 f2
+158063@betong:~$ ls
+123.txt~	Lab12.c~	f1		lab11.c~
+20.txt		Lab8.c~		f2		lab13y.c~
+20.txt~		Lab9.c~		f2~		lab7.nam~
+Desktop		Mail		kp3.c~		qwerty
+Lab11.c~	ex.c~		kp4.c~		sort
+158063@betong:~$ cat qwerty
+
+
+
+
+
+ q w e r t yls
+ q w e r t yls
+123456
+125 789 1001
+125 789 1001
+45664223 7897 4 5 6 
+45664223 7897 4 5 6 
+asdasd
+asdasd
+ls ew
+ls ew
+qwerty
+qwerty
+158063@betong:~$ sort -d f1 f2
+
+
+
+
+
+ q w e r t yls
+ q w e r t yls
+123456
+125 789 1001
+125 789 1001
+45664223 7897 4 5 6 
+45664223 7897 4 5 6 
+asdasd
+asdasd
+ls ew
+ls ew
+qwerty
+qwerty
+158063@betong:~$ sort -i f1 f2
+
+
+
+
+
+ q w e r t yls
+ q w e r t yls
+123456
+125 789 1001
+125 789 1001
+45664223 7897 4 5 6 
+45664223 7897 4 5 6 
+asdasd
+asdasd
+ls ew
+ls ew
+qwerty
+qwerty
+158063@betong:~$ sort -b f1 f2
+
+
+
+
+
+123456
+125 789 1001
+125 789 1001
+45664223 7897 4 5 6 
+45664223 7897 4 5 6 
+asdasd
+asdasd
+ls ew
+ls ew
+ q w e r t yls
+ q w e r t yls
+qwerty
+qwerty
+158063@betong:~$ dd if=f1 of=f9 conv=ucase
+0+1 records in
+0+1 records out
+79 bytes transferred in 0.000565 secs (139869 bytes/sec)
+158063@betong:~$ ls
+#20.txt#	Lab12.c~	f2		lab13y.c~
+123.txt~	Lab8.c~		f2~		lab7.nam~
+20.txt		Lab9.c~		f9		qwerty
+20.txt~		Mail		kp3.c~		sort
+Desktop		ex.c~		kp4.c~
+Lab11.c~	f1		lab11.c~
+158063@betong:~$ cat f9
+
+
+ Q W E R T YLS
+125 789 1001
+45664223 7897 4 5 6 
+ASDASD
+LS EW
+QWERTY
+
+123456
+158063@betong:~$ nroff f2
+ls ew asdasd qwerty 125 789 1001 45664223 7897 4 5 6
+ q w e r t yls
+158063@betong:~$ gzip f2
+158063@betong:~$ ls
+#20.txt#	Lab12.c~	f2.gz		lab13y.c~
+123.txt~	Lab8.c~		f2~		lab7.nam~
+20.txt		Lab9.c~		f9		qwerty
+20.txt~		Mail		kp3.c~		sort
+Desktop		ex.c~		kp4.c~
+Lab11.c~	f1		lab11.c~
+158063@betong:~$ bzip2 f1
+158063@betong:~$ ls
+#20.txt#	Lab12.c~	f2.gz		lab13y.c~
+123.txt~	Lab8.c~		f2~		lab7.nam~
+20.txt		Lab9.c~		f9		qwerty
+20.txt~		Mail		kp3.c~		sort
+Desktop		ex.c~		kp4.c~
+Lab11.c~	f1.bz2		lab11.c~
+158063@betong:~$ du f1 f2
+1	f1
+1	f2
+58063@betong:~$ df -k
+Filesystem                       1024-blocks     Used    Avail Capacity  Mounted on
+192.168.2.50:/usr/diskless/black    20971520 15062175  5909345    72%    /
+devfs                                      1        1        0   100%    /dev
+procfs                                     4        4        0   100%    /proc
+/dev/md0                                7662       76     6974     1%    /var/run
+/dev/md1                                7662        8     7042     0%    /media
+kuantan:/home                      104857600 31509007 73348592    30%    /home
+kuantan:/stud                      104857600 80371924 24485676    77%    /stud
+kuantan:/usr/diskless/vars         103045103  4005663 99039440     4%    /vars
+/vars/betong/log                   103045103  4005663 99039440     4%    /var/log
+/vars/betong/spool                 103045103  4005663 99039440     4%    /var/spool
+/dev/md2                               19566       26    17976     0%    /tmp
+/dev/msdosfs/Windows 7 u            15814656     6464 15808192     0%    /media/Windows 7 u
+158063@betong:~$ tar -cf fab f1    
+158063@betong:~$ ls
+123.txt~	Lab8.c~		f1~		fab		qwerty
+20.txt		Lab9.c~		f2		kp3.c~		sort
+20.txt~		Mail		f2.BAK		kp4.c~
+Desktop		ex.c~		f2.gz		lab11.c~
+Lab11.c~	f1		f2~		lab13y.c~
+Lab12.c~	f1.bz2		f9		lab7.nam~
+158063@betong:~$ tar -tf fab f1
+f1
+158063@betong:~$ tar -uf fab f1
+158063@betong:~$ tar -xf fab f1
+158063@betong:~$ ls
+123.txt~	Lab8.c~		f1~		fab		qwerty
+20.txt		Lab9.c~		f2		kp3.c~		sort
+20.txt~		Mail		f2.BAK		kp4.c~
+Desktop		ex.c~		f2.gz		lab11.c~
+Lab11.c~	f1		f2~		lab13y.c~
+Lab12.c~	f1.bz2		f9		lab7.nam~
+158063@betong:~$ ls -l
+total 77
+-rw-rw-rw-  1 158063  stud  2622 Dec 29 19:47 123.txt~
+-rw-------  1 158063  stud  3357 Feb 13 13:33 20.txt
+-rw-------  1 158063  stud     0 Feb 13 11:32 20.txt~
+drwx------  2 158063  stud     2 Feb 13 09:53 Desktop
+-rw-------  1 158063  stud   371 Nov 17 17:50 Lab11.c~
+-rwx------  1 158063  stud   715 Nov 17 17:19 Lab12.c~
+-rwx------  1 158063  stud   141 Nov  3 16:44 Lab8.c~
+-rwx------  1 158063  stud   935 Nov 10 18:47 Lab9.c~
+drwx------  5 158063  stud     6 Feb 13 11:23 Mail
+-rw-------  1 158063  stud   211 Oct 27 17:01 ex.c~
+-rw-------  1 158063  stud  1024 Feb 13 14:11 f1
+-rw-------  1 158063  stud   101 Feb 13 11:42 f1.bz2
+-rw-------  1 158063  stud     0 Feb 13 14:04 f1~
+-rw-------  1 158063  stud    57 Feb 13 14:05 f2
+-rw-------  1 158063  stud     0 Feb 13 13:29 f2.BAK
+-rw-------  1 158063  stud    86 Feb 13 11:38 f2.gz
+-rw-------  1 158063  stud    49 Feb 13 14:04 f2~
+-rw-------  1 158063  stud    79 Feb 13 13:03 f9
+-rw-------  1 158063  stud  3584 Feb 13 14:12 fab
+-rwx------  1 158063  stud   662 Nov 23 03:31 kp3.c~
+-rwx------  1 158063  stud  2213 Dec 29 19:41 kp4.c~
+-rw-------  1 158063  stud   197 Dec  1 17:39 lab11.c~
+-rwx------  1 158063  stud   862 Dec 22 17:18 lab13y.c~
+-rwx------  1 158063  stud   256 Oct 20 14:33 lab7.nam~
+-rw-------  1 158063  stud   150 Feb 13 12:57 qwerty
+-rw-------  1 158063  stud   142 Feb 13 11:41 sort
+
+
